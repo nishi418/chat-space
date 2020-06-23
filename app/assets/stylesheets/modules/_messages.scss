@@ -21,10 +21,10 @@
       width: 260px;
       display: flex;
       justify-content: space-between;
-      .box-name{
+      &__Name{
         font-size: 20px;
       }
-      .box-icons{
+      &__Icons{
         display: flex;
         justify-content: end;
         list-style: none;
@@ -41,12 +41,12 @@
     background-color: #2f3e51;
     .group{
       margin: 0 20px;
-      .group-name{
+      &__name{
         padding-top: 20px;
         margin-bottom: 5px;
         font-size: 15px;
       }
-      .group-message{
+      &__message{
         font-size: 11px;
         padding-bottom: 40px;
       }
@@ -66,13 +66,13 @@
     display: flex;
     justify-content: space-between;
     .groupInfo{
-      .groupName{
+      &__Name{
         margin-top: 35px;
         margin-bottom: 15px;
         font-size: 20px;
         color: #333333;
       }
-      .groupmemberList{
+      &__List{
         font-size: 12px;
         color: #999999;
       }
@@ -95,23 +95,23 @@
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 35px 40px 0;
-    .messageGroup{
+    &__Group{
       margin-bottom: 46px;
       .messageInfo{
         display: flex;
-        .userName{
+        &__Name{
           font-size: 16px;
           font-weight: bold;
           color: #333333;
         }
-        .messageDate{
+        &__Date{
           font-size: 12px;
           padding-left: 10px;
           color: #999999;
         }
       .messageContent{
         margin-top: 12px;
-        .messageText{
+        &__Text{
           font-size: 14px;
           color: #434A54;
         }
@@ -126,7 +126,7 @@
     .form{
       display: flex;
       justify-content: space-between;
-      .formContents{
+      &__Contents{
         width: 100%;
         color: #000;
         background-color: #fff;
@@ -151,7 +151,7 @@
           }
         }
       }
-      .formSubmit{
+      &__Submit{
         border: none;
         font-size: 16px;
         height: 50px;

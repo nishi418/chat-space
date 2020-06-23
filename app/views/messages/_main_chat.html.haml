@@ -1,36 +1,37 @@
 .chat-main
   .rightheader
     .groupInfo
-      %p.groupName TEST
-      %p.groupmemberList Member : NISHI
+      %p.groupInfo__Name TEST
+      %p.groupInfo__List Member : NISHI
     %p.editButton
       = link_to('Edit', '#',)
   .message
-    .messageGroup
+    .message__Group
       .messageInfo
-        %p.userName NISHI
-        %p.messageDate 2020/6/16(Tue) 0:00:00
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
       .messageContent
-        %p.messageText test
-    .messageGroup
+        %p.messageContent__Text test
+    .message__Group
       .messageInfo
-        %p.userName NISHI
-        %p.messageDate 2020/6/16(Tue) 0:00:00
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
       .messageContent
-        %p.messageText test
-    .messageGroup
+        %p.messageContent__Text test
+    .message__Group
       .messageInfo
-        %p.userName NISHI
-        %p.messageDate 2020/6/16(Tue) 0:00:00
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
       .messageContent
-        %p.messageText test
+        %p.messageContent__Text test    
+    
   .footer
     .form
-      .formContents
+      .form__Contents
         %input.inputText{:name => "message", :placeholder => "type a message", :type => "text"}
         %label.inputImage{:for => "message_image"}
           = icon('far', 'image')
           %input.hidden{type: "file", :name => "image", :id =>"message_image"}
 
-      .formSubmit Send
+      .form__Submit Send
       
