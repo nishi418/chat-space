@@ -1,0 +1,37 @@
+.chat-main
+  .rightheader
+    .groupInfo
+      %p.groupInfo__Name TEST
+      %p.groupInfo__List Member : NISHI
+    %p.editButton
+      = link_to('Edit', '#',)
+  .message
+    .message__Group
+      .messageInfo
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
+      .messageContent
+        %p.messageContent__Text test
+    .message__Group
+      .messageInfo
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
+      .messageContent
+        %p.messageContent__Text test
+    .message__Group
+      .messageInfo
+        %p.messageInfo__Name NISHI
+        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
+      .messageContent
+        %p.messageContent__Text test    
+    
+  .footer
+    .form
+      .form__Contents
+        %input.inputText{:name => "message", :placeholder => "type a message", :type => "text"}
+        %label.inputImage{:for => "message_image"}
+          = icon('far', 'image')
+          %input.hidden{type: "file", :name => "image", :id =>"message_image"}
+
+      .form__Submit Send
+      
