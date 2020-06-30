@@ -1,11 +1,12 @@
 .chat-side
   .leftheader
     .box
-      %p.box__Name NISHI
+      %h3.box__Name
+        = current_user.name
       %ul.box__Icons
         = link_to "#", class: "icons-edit" do
           = icon('fas', 'edit',  class: "icons-edit")
-        = link_to "#", class: "icons-cog" do
+        = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',  class: "icons-cog")
   .group-list
     .group
