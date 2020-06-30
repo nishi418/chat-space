@@ -37,10 +37,15 @@
     }
   }
   .group-list{
+    
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     .group{
       margin: 0 20px;
+      a{
+        color: white;
+        text-decoration: none;
+      }
       &__name{
         padding-top: 20px;
         margin-bottom: 5px;
