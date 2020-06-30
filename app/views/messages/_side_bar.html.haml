@@ -4,15 +4,15 @@
       %h3.box__Name
         = current_user.name
       %ul.box__Icons
-        = link_to "#", class: "icons-edit" do
+        = link_to new_group_path do
           = icon('fas', 'edit',  class: "icons-edit")
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',  class: "icons-cog")
   .group-list
-    .group
-      %p.group__name techcamp
-      %p.group__message まだメッセージがありません
-      %p.group__name techcamp
-      %p.group__message まだメッセージがありません
-      %p.group__name techcamp
-      %p.group__message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message 
+            メッセージはまだありません
