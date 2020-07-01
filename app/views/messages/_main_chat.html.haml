@@ -4,9 +4,9 @@
       .groupInfo__Name 
         = @group.name
       .groupInfo__List
-      Member : 
-      - @group.users.each do |user|
-        = user.name
+        Members:&nbsp
+        - @group.users.each do |user|
+          = user.name
     %p.editButton 
       = link_to "Edit", "edit" 
 
