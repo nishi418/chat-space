@@ -1,37 +1,25 @@
 .chat-main
   .rightheader
     .groupInfo
-      %p.groupInfo__Name TEST
-      %p.groupInfo__List Member : NISHI
-    %p.editButton
-      = link_to('Edit', '#',)
+      .groupInfo__Name 
+        = @group.name
+      .groupInfo__List
+      Member : 
+      - @group.users.each do |user|
+        = user.name
+    %p.editButton 
+      = link_to "Edit", "edit" 
+
   .message
-    .message__Group
-      .messageInfo
-        %p.messageInfo__Name NISHI
-        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
-      .messageContent
-        %p.messageContent__Text test
-    .message__Group
-      .messageInfo
-        %p.messageInfo__Name NISHI
-        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
-      .messageContent
-        %p.messageContent__Text test
-    .message__Group
-      .messageInfo
-        %p.messageInfo__Name NISHI
-        %p.messageInfo__Date 2020/6/16(Tue) 0:00:00
-      .messageContent
-        %p.messageContent__Text test    
+    = render @messages    
     
   .footer
-    .form
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .form__Contents
-        %input.inputText{:name => "message", :placeholder => "type a message", :type => "text"}
-        %label.inputImage{:for => "message_image"}
-          = icon('far', 'image')
-          %input.hidden{type: "file", :name => "image", :id =>"message_image"}
-
-      .form__Submit Send
+        = f.text_field :content, class: 'inputText', placeholder: 'type a message'
+        = f.label :image, class: 'inputImage' do
+          = icon('far', 'image', class: 'fa-image')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__Submit'
+      
       
