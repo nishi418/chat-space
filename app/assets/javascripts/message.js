@@ -61,6 +61,10 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.message').append(html);
+      $('.message').animate({scrollTop: $('.message')[0].scrollHeight});
+      $('form')[0].reset();
+      $('.form__Submit').prop('disabled', false);
     });
   });
 });
