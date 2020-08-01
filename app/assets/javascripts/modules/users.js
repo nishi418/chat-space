@@ -1,5 +1,6 @@
+var exisUser = [] ;
 $(function() {
-  function addUser(user) {
+  function addUser(user) { 
     let html = `
                 <div class="ChatMember">
                   <p class="ChatMember__name">${user.name}</p>
@@ -12,13 +13,15 @@ $(function() {
   function addNoUser() {
     let html = `
                 <div class="ChatMember">
-                  <p class="ChatMember__name">ユーザーが見つかりません</p>
+                <p class="ChatMember__name">ユーザーが見つかりません</p>
                 </div>
-                `;
+    `;
     $("#UserSearchResult").append(html);
+       
   }
 
   function addMember(name, id) {
+    exisUser.push(name);
     let html = `
                 <div class="ChatMember">
                   <p class="ChatMember__name">${name}</p>
@@ -41,7 +44,9 @@ $(function() {
       $("#UserSearchResult").empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
-          addUser(user);
+        	if(exisUser.indexOf(user.name) < 0) {
+            addUser(user);
+        	}
         });
       } else if (input.length == 0) {
         return false;
@@ -61,5 +66,7 @@ $(function() {
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();
+    var element = $(this).parent().find('p').text();
+    exisUser.splice(exisUser.indexOf(element), 1);
   });
 });
